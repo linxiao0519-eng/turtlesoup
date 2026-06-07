@@ -185,12 +185,12 @@ if user_input := st.chat_input("請輸入駭入提問..."):
                     ai_reply = response.text.strip()
                     
                     target_keyword = st.session_state.secret_target
+                    allowed_responses = ["是", "不是", "與故事/題目無關", "不完全是"]
                     
+                    # 🚨 終極嚴格白名單防禦 (Exact Match)
                     if target_keyword in ai_reply or len(ai_reply) > 10:
                         ai_reply = "與故事/題目無關"
-                    
-                    allowed_responses = ["是", "不是", "與故事/題目無關", "不完全是"]
-                    if not any(res in ai_reply for res in allowed_responses):
+                    elif ai_reply not in allowed_responses:
                         ai_reply = "與故事/題目無關"
 
                     st.markdown(f'<span style="color: #F8FAFC;">{ai_reply}</span>', unsafe_allow_html=True)
