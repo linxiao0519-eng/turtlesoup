@@ -77,7 +77,7 @@ st.markdown("""
 st.markdown('<p class="title-text">🐢 AI 藍軍防禦控制台</p>', unsafe_allow_html=True)
 st.markdown('<p class="subtitle-text">> System Status: ACTIVE | Protocol: v6.5 (Hell Mode)</p>', unsafe_allow_html=True)
 
-MODEL_NAME = 'gemini-2.5-flash'
+MODEL_NAME = 'gemini-3.1-flash-lite'
 
 # ==========================================
 # 1. 系統狀態初始化 (地獄級題庫更新)
